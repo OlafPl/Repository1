@@ -1,0 +1,37 @@
+<script> //code
+	function dezefunctie() {
+		var x = invoer;
+
+		var invoer = document.getElementById("invoerveld").value;
+		console.log(invoer);
+		invoer = parseInt(invoer);
+		if(isNaN(invoer)) {
+			alert("dit is geen leeftijd!");
+        }
+		console.log(invoer);
+		if (invoer < 16) { 	
+            document.getElementById("uitkomst").innerHTML = "Je bent helaas te jong om alchohol te kopen!";
+            document.getElementById("uitkomst").style.backgroundColor = 'red';
+		}
+
+		else {
+
+			if (invoer == 16 || invoer == 17) {
+				document.getElementById("uitkomst").innerHTML = "Je mag volgens de oude wetgeving alleen oranjebier en wijn kopen.";
+				document.getElementById("uitkomst").style.backgroundColor = 'yellow';
+			}
+
+			else {
+				document.getElementById("uitkomst").innerHTML = "Je bent oud genoeg om alchohol te kopen!";
+                document.getElementById("uitkomst").style.backgroundColor = 'green';
+			}
+		}
+	}
+</script>
+
+<body>
+	<h1>Alchohol leeftijdchecker</h1>
+	Vul hier je leeftijd in <input type="text" id="invoerveld">
+	<input onclick="dezefunctie()" type="button" value="klik hier">
+	<div id="uitkomst"> test</div>
+</body>
